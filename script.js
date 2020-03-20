@@ -2,11 +2,11 @@
 
 // Variables
 var myfirstPassword = ""
-var lowerlettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var upperlettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var numbersArray = ["0", "1", "2", "3","4", "5", "6", "7", "8", "9"]
-var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
-// var chooseArray = [lowerlettersArray, upperlettersArray, numbersArray, specialArray]
+var lowerlettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperlettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbersArray = ["0", "1", "2", "3","4", "5", "6", "7", "8", "9"];
+var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+var chooseArray = [lowerlettersArray, upperlettersArray, numbersArray, specialArray];
 
 
 // Criteria Questions
@@ -17,11 +17,11 @@ if (lengthCriteria == true) {
     var passwordLengthRange = passwordmaxLength - passwordminLength + 1;
     var passwordAdditionalLength = Math.floor(Math.random() * passwordLengthRange);
     var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
-    // console.log("max length = " + passwordmaxLength);
-    // console.log("min length = " + passwordminLength);
-    // console.log("length range = " + passwordLengthRange);
-    // console.log("random additional length = " + passwordAdditionalLength);
-    // console.log("password length = " + passwordLength);
+    console.log("max length = " + passwordmaxLength);
+    console.log("min length = " + passwordminLength);
+    console.log("length range = " + passwordLengthRange);
+    console.log("random additional length = " + passwordAdditionalLength);
+    console.log("password length = " + passwordLength);
 }
 var typeCriteria = confirm("Would you like to specify password character types?");
 if (typeCriteria == true) {
@@ -29,6 +29,25 @@ if (typeCriteria == true) {
     var typeUpper = confirm("Would you like to use uppercase character types?");
     var typeNumeric = confirm("Would you like to use numeric character types?");
     var typeSpecial = confirm("Would you like to use special character types?");
+}
+
+if (typeCriteria == true) {
+    var chooseArray =[];
+    console.log("length is " + chooseArray.length);
+    if (typeLower == true) {
+        chooseArray.push(lowerlettersArray);
+    }
+    if (typeUpper == true) {
+        chooseArray.push(upperlettersArray);
+    }
+    if (typeNumeric == true) {
+        chooseArray.push(numbersArray);
+    }
+    if (typeSpecial == true) {
+        chooseArray.push(specialArray);
+    }
+    console.log("length is now " + chooseArray.length);
+    console.log(chooseArray);
 }
 // based on that input and returns it
 function generatePassword() {
@@ -42,33 +61,51 @@ function generatePassword() {
     // Will produce 10-i random numbers
     for (var i = 0; i < j; i++) {
 
-    var num = Math.floor(Math.random() * 4);
+    var arrayLength = chooseArray.length
+    var num = Math.floor(Math.random() * arrayLength);
     // var choice = chooseArray[num];
+
+    console.log(num)
+    
+    
+// instead of all the combinations just figure out how to remove from the original array
+
+// something broke with choose array, last pull was working
+
+
     if (num == 0) {
-        var selection = Math.floor(Math.random() * 26);
-        var choice = lowerlettersArray[selection]
+        var arrayChoice = chooseArray[0]
+        var choiceLength = arrayChoice.length
+        var selection = Math.floor(Math.random() * choiceLength);
+        var choice = arrayChoice[selection]
     }
     if (num == 1) {
-        var selection = Math.floor(Math.random() * 26);
-        var choice = upperlettersArray[selection]
+        var arrayChoice = chooseArray[1]
+        var choiceLength = arrayChoice.length
+        var selection = Math.floor(Math.random() * choiceLength);
+        var choice = arrayChoice[selection]
     }
     if (num == 2) {
-        var selection = Math.floor(Math.random() * 10);
-        var choice = numbersArray[selection]
+        var arrayChoice = chooseArray[2]
+        var choiceLength = arrayChoice.length
+        var selection = Math.floor(Math.random() * choiceLength);
+        var choice = arrayChoice[selection]
     }
     if (num == 3) {
-        var selection = Math.floor(Math.random() * 10);
-        var choice = specialArray[selection]
+        var arrayChoice = chooseArray[3]
+        var choiceLength = arrayChoice.length
+        var selection = Math.floor(Math.random() * choiceLength);
+        var choice = arrayChoice[selection]
     }
     console.log(choice);
 
     var myfirstPassword = myfirstPassword + choice;
-
+    console.log(myfirstPassword)
     }
     var newlength = j + 9;
     var myPassword = myfirstPassword.slice(9, newlength);
-    // console.log(myPassword);
-    // console.log(passwordLength)
+    console.log(myPassword);
+    console.log(passwordLength)
     return myPassword;
 
 
