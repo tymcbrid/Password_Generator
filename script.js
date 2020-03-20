@@ -17,11 +17,11 @@ if (lengthCriteria == true) {
     var passwordLengthRange = passwordmaxLength - passwordminLength + 1;
     var passwordAdditionalLength = Math.floor(Math.random() * passwordLengthRange);
     var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
-    console.log("max length = " + passwordmaxLength);
-    console.log("min length = " + passwordminLength);
-    console.log("length range = " + passwordLengthRange);
-    console.log("random additional length = " + passwordAdditionalLength);
-    console.log("password length = " + passwordLength);
+    // console.log("max length = " + passwordmaxLength);
+    // console.log("min length = " + passwordminLength);
+    // console.log("length range = " + passwordLengthRange);
+    // console.log("random additional length = " + passwordAdditionalLength);
+    // console.log("password length = " + passwordLength);
 }
 var typeCriteria = confirm("Would you like to specify password character types?");
 if (typeCriteria == true) {
@@ -32,7 +32,8 @@ if (typeCriteria == true) {
 }
 // based on that input and returns it
 function generatePassword() {
-
+    var passwordAdditionalLength = Math.floor(Math.random() * passwordLengthRange);
+    var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
     var j = 10;
     if (lengthCriteria == true) {
         var j = passwordLength;
@@ -64,9 +65,10 @@ function generatePassword() {
     var myfirstPassword = myfirstPassword + choice;
 
     }
-    var newlength = j + 8;
-    var myPassword = myfirstPassword.slice(8, newlength);
-    console.log(myPassword);
+    var newlength = j + 9;
+    var myPassword = myfirstPassword.slice(9, newlength);
+    // console.log(myPassword);
+    // console.log(passwordLength)
     return myPassword;
 
 
