@@ -1,8 +1,12 @@
 // Write a function that takes user input and creates a password
 
 // Variables
-var lettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+var myfirstPassword = ""
+var lowerlettersArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var upperlettersArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var numbersArray = ["0", "1", "2", "3","4", "5", "6", "7", "8", "9"]
+var specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+// var chooseArray = [lowerlettersArray, upperlettersArray, numbersArray, specialArray]
 
 
 // Criteria Questions
@@ -29,26 +33,46 @@ if (typeCriteria == true) {
 // based on that input and returns it
 function generatePassword() {
 
-    var j = 10
+    var j = 10;
     if (lengthCriteria == true) {
-
+        var j = passwordLength;
     }
     
     // Will produce 10-i random numbers
     for (var i = 0; i < j; i++) {
 
-    // Generate random number between 0-9
-    var num = Math.floor(Math.random() * 10);
+    var num = Math.floor(Math.random() * 4);
+    // var choice = chooseArray[num];
+    if (num == 0) {
+        var selection = Math.floor(Math.random() * 26);
+        var choice = lowerlettersArray[selection]
     }
+    if (num == 1) {
+        var selection = Math.floor(Math.random() * 26);
+        var choice = upperlettersArray[selection]
+    }
+    if (num == 2) {
+        var selection = Math.floor(Math.random() * 10);
+        var choice = numbersArray[selection]
+    }
+    if (num == 3) {
+        var selection = Math.floor(Math.random() * 10);
+        var choice = specialArray[selection]
+    }
+    console.log(choice);
+
+    var myfirstPassword = myfirstPassword + choice;
+
+    }
+    var newlength = j + 8;
+    var myPassword = myfirstPassword.slice(8, newlength);
+    console.log(myPassword);
+    return myPassword;
 
 
 
-
-
-
-
-
-
+   // Generate random number between 0-9
+    // var num = Math.floor(Math.random() * 10);
 
 
 
