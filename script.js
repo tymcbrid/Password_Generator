@@ -17,11 +17,11 @@ if (lengthCriteria == true) {
     var passwordLengthRange = passwordmaxLength - passwordminLength + 1;
     var passwordAdditionalLength = Math.floor(Math.random() * passwordLengthRange);
     var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
-    console.log("max length = " + passwordmaxLength);
-    console.log("min length = " + passwordminLength);
-    console.log("length range = " + passwordLengthRange);
-    console.log("random additional length = " + passwordAdditionalLength);
-    console.log("password length = " + passwordLength);
+    // console.log("max length = " + passwordmaxLength);
+    // console.log("min length = " + passwordminLength);
+    // console.log("length range = " + passwordLengthRange);
+    // console.log("random additional length = " + passwordAdditionalLength);
+    // console.log("password length = " + passwordLength);
 }
 var typeCriteria = confirm("Would you like to specify password character types?");
 if (typeCriteria == true) {
@@ -109,7 +109,6 @@ function generatePassword() {
     return myPassword;
 
 
-
    // Generate random number between 0-9
     // var num = Math.floor(Math.random() * 10);
 
@@ -154,3 +153,15 @@ function generatePassword() {
 // Input validation prompt and make sure at least one character type is selected
 // Password generated
 // Password displayed in an alert or written to the page
+
+
+var copyBtn = document.querySelector("#copy");
+
+function exectureCopy() {
+    document.querySelector("#password").select();
+    document.execCommand("Copy");
+    alert("Password is copied to clipboard")
+}
+
+copyBtn.addEventListener("click", exectureCopy);
+// document.execcommand("Copy")
