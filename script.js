@@ -160,7 +160,7 @@ var copyBtn = document.querySelector("#copy");
 function exectureCopy() {
     document.querySelector("#password").select();
     document.execCommand("Copy");
-    alert("Password is copied to clipboard")
+    alert("Password is copied to clipboard");
 }
 
 copyBtn.addEventListener("click", exectureCopy);
