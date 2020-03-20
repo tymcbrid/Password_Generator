@@ -10,6 +10,14 @@ var lengthCriteria = confirm("Would you like to specify password length?");
 if (lengthCriteria == true) {
     var passwordminLength = prompt("Please enter a minimum length for your password");
     var passwordmaxLength = prompt("Please enter a maximum length for your password");
+    var passwordLengthRange = passwordmaxLength - passwordminLength + 1;
+    var passwordAdditionalLength = Math.floor(Math.random() * passwordLengthRange);
+    var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
+    console.log("max length = " + passwordmaxLength);
+    console.log("min length = " + passwordminLength);
+    console.log("length range = " + passwordLengthRange);
+    console.log("random additional length = " + passwordAdditionalLength);
+    console.log("password length = " + passwordLength);
 }
 var typeCriteria = confirm("Would you like to specify password character types?");
 if (typeCriteria == true) {
@@ -20,12 +28,40 @@ if (typeCriteria == true) {
 }
 // based on that input and returns it
 function generatePassword() {
+
+    var j = 10
+    if (lengthCriteria == true) {
+
+    }
+    
+    // Will produce 10-i random numbers
+    for (var i = 0; i < j; i++) {
+
+    // Generate random number between 0-9
+    var num = Math.floor(Math.random() * 10);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /****
      * WRITE YOUR CODE HERE
      */
-    alert("I am in generate password");
+    // alert("I am in generate password");
   
-    return "sometext";
+    // return "sometext";
   }
   
   //////////////////////////////////////////////////////////////
