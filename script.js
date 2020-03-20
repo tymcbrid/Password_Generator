@@ -106,6 +106,11 @@ function generatePassword() {
     var myPassword = myfirstPassword.slice(9, newlength);
     console.log(myPassword);
     console.log(passwordLength)
+
+
+    var finalPass = document.querySelector("#password").select();
+    document.querySelector("#previousGenerated").innerHTML += "<li>" + myPassword + "</li>" + "<br>";
+
     return myPassword;
 
 
@@ -114,16 +119,6 @@ function generatePassword() {
 
 
 
-
-
-
-
-    /****
-     * WRITE YOUR CODE HERE
-     */
-    // alert("I am in generate password");
-  
-    // return "sometext";
   }
   
   //////////////////////////////////////////////////////////////
