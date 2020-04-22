@@ -68,7 +68,7 @@ if (typeCriteria == true) {
 // based on that input and returns it
 function generatePassword() {
     var passwordAdditionalLength = Math.floor(Math.random() * passwordLengthRange);
-    // var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
+    var passwordLength = parseInt(passwordminLength) + parseInt(passwordAdditionalLength);
     var j = 10;
     if (lengthCriteria == true) {
         var j = passwordLength;
